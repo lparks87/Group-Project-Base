@@ -1,11 +1,17 @@
-import DietaryRestrictions from './DietaryRestrictions.js';
-import DiningHall from './DiningHall.js';
-import Macros from './Macros.js';
-import Meals from './Meals.js';
+import Tv_movie from './tv_movie.js';
+import Studio from './studio.js';
+import Genre from './genre.js';
+import Invoices from './invoices.js';
+import ViewerRatings from './viewer_ratings.js';
+import Rentals from './rental_info.js';
+import Customers from './customer.js'
 
 export default {
-  DietaryRestrictions,
-  DiningHall,
-  Macros,
-  Meals
+  Tv_movie,
+  Studio,
+  Genre,
+  Invoices,
+  ViewerRatings,
+  Rentals,
+  Customers
 };

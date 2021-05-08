@@ -1,17 +1,23 @@
 export default (sequelize, DataTypes) => {
-  const DietaryRestrictions = sequelize.define(
-    'Dietary_Restrictions',
+  const studio = sequelize.define(
+    'studio',
     {
-      restriction_id: {
+      studio_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true
       },
-      restriction_type: {
+      studio_name: {
         type: DataTypes.STRING
+      },
+      latitude: {
+        type: DataTypes.FLOAT
+      },
+      longitude: {
+        type: DataTypes.FLOAT
       }
     },
     { freezeTableName: true, timestamps: false }
   );
-  return DietaryRestrictions;
+  return studio;
 };

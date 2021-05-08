@@ -1,0 +1,243 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Cinzel+Decorative:700"
+      rel="stylesheet"
+    />
+    <!--Make sure bulma is after the Leaflet script followed by styles.css-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/df6cf4852c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="styles.css" rel="stylesheet" />
+    <title>RottenStudios</title>
+  </head>
+  <body>
+    <div class="header has-text-centered">
+      <h1 class="title">RottenStudios</h1>
+
+      <nav
+        class="navbar is-centered"
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <div class="navbar-brand">
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasic"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarBasic" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="active" href="/index.html"
+              ><i class="fa fa-fw fa-home"></i> Home</a
+            >
+            <a class="active" href="/map.html"
+              ><i class="fas fa-map-pin"></i> Map</a
+            >
+            <a class="active" href="/about.html"
+              ><i class="far fa-question-circle"></i> About Us</a
+            >
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <div class="dropdown" id="category">
+          <div class="dropdown-trigger">
+            <button
+              class="button"
+              aria-haspopup="true"
+              aria-controls="dropdown-menu"
+              onclick="catFunction()"
+            >
+              <span>Category</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a href="#" class="dropdown-item">Movie</a>
+              <a href="#" class="dropdown-item">TV Show</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="dropdown" id="genre">
+          <div class="dropdown-trigger">
+            <button
+              class="button"
+              aria-haspopup="true"
+              aria-controls="dropdown-menu"
+              onclick="catFunction()"
+            >
+              <span>Genre</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a href="#" class="dropdown-item">Action</a>
+              <a href="#" class="dropdown-item">Family</a>
+              <a href="#" class="dropdown-item">Thriller & Suspense</a>
+              <a href="#" class="dropdown-item">Drama</a>
+              <a href="#" class="dropdown-item">Horror</a>
+              <a href="#" class="dropdown-item">Comedy</a>
+              <a href="#" class="dropdown-item">Sci-Fi & Fantasy</a>
+              <a href="#" class="dropdown-item">Documentary</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="dropdown" id="viewer_rating">
+          <div class="dropdown-trigger">
+            <button
+              class="button"
+              aria-haspopup="true"
+              aria-controls="dropdown-menu"
+              onclick="catFunction()"
+            >
+              <span>Viewer Rating</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a href="#" class="dropdown-item">NR</a>
+              <a href="#" class="dropdown-item">PG</a>
+              <a href="#" class="dropdown-item">PG-13</a>
+              <a href="#" class="dropdown-item">R</a>
+              <a href="#" class="dropdown-item">TV-Y7-FV</a>
+              <a href="#" class="dropdown-item">TV-14</a>
+              <a href="#" class="dropdown-item">TV-MA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="dropdown" id="studio">
+          <div class="dropdown-trigger">
+            <button
+              class="button"
+              aria-haspopup="true"
+              aria-controls="dropdown-menu"
+              onclick="catFunction()"
+            >
+              <span>Studio</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a href="#" class="dropdown-item">Screen Media</a>
+              <a href="#" class="dropdown-item">Warner Bros.</a>
+              <a href="#" class="dropdown-item">Sony</a>
+              <a href="#" class="dropdown-item">Universal</a>
+              <a href="#" class="dropdown-item">Lionsgate</a>
+              <a href="#" class="dropdown-item">Paramount</a>
+              <a href="#" class="dropdown-item">MGM</a>
+              <a href="#" class="dropdown-item">BVHE</a>
+              <a href="#" class="dropdown-item">Samuel Goldwyn Films</a>
+              <a href="#" class="dropdown-item">FOX</a>
+              <a href="#" class="dropdown-item">STX Entertainment</a>
+              <a href="#" class="dropdown-item">Studio Mir</a>
+              <a href="#" class="dropdown-item">ABC</a>
+              <a href="#" class="dropdown-item">Netflix</a>
+              <a href="#" class="dropdown-item">Belasirius Productions</a>
+              <a href="#" class="dropdown-item">Pierrot</a>
+              <a href="#" class="dropdown-item">CBS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="dropdown" id="year">
+          <div class="dropdown-trigger">
+            <button
+              class="button"
+              aria-haspopup="true"
+              aria-controls="dropdown-menu"
+              onclick="catFunction()"
+            >
+              <span>Year</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a href="#" class="dropdown-item">2006</a>
+              <a href="#" class="dropdown-item">2012</a>
+              <a href="#" class="dropdown-item">2013</a>
+              <a href="#" class="dropdown-item">2014</a>
+              <a href="#" class="dropdown-item">2015</a>
+              <a href="#" class="dropdown-item">2016</a>
+              <a href="#" class="dropdown-item">2017</a>
+              <a href="#" class="dropdown-item">2018</a>
+              <a href="#" class="dropdown-item">2019</a>
+              <a href="#" class="dropdown-item">2020</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="results">
+      <table class="table is-bordered is-hoverable">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Viewer Rating</th>
+            <th>Studio</th>
+            <th>Year</th>
+            <th>Total Invoices</th>
+          </tr>
+        </thead>
+        <tbody class="body"></tbody>
+      </table>
+    </div>
+    <div class="foot">
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>This webpage was created by Lindsay Parks.</p>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

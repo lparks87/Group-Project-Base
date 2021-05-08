@@ -1,0 +1,141 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Cinzel+Decorative:700"
+    rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <!--Make sure bulma is after the Leaflet script followed by styles.css-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"
+    />
+    <script src="https://kit.fontawesome.com/df6cf4852c.js" crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet" />
+    <title>RottenStudios</title>
+  </head>
+  <body>
+    <div class="header has-text-centered">
+      <h1 class="title">RottenStudios</h1>
+
+      <nav class="navbar is-centered" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasic" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="active" href="/index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+            <a class="active" href="/map.html"><i class="fas fa-map-pin"></i> Map</a>
+            <a class="active" href="/about.html"><i class="far fa-question-circle"></i> About Us</a>
+      
+          </div>
+        </div>     
+      </nav>
+    </div>
+
+    <div class="container" id="locateStudios">
+      <h2>Locate Studios Inside and Outside of Your Area By Using The Filters Below</h2>
+      <div class="dropdown-content-z center-block">
+        <button onclick="myFunction()" class="dropbtn" id="mapbtn">
+          <span>Studio</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+        </button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">Screen Media</a>
+          <a href="#">Warner Bros.</a>
+          <a href="#">Sony</a>
+          <a href="#">Universal</a>
+          <a href="#">Lionsgate</a>
+          <a href="#">Paramount</a>
+          <a href="#">MGM</a>
+          <a href="#">BVHE</a>
+          <a href="#">Samuel Goldwyn Films</a>
+          <a href="#">FOX</a>
+          <a href="#">STX Entertainment</a>
+          <a href="#">Studio Mir</a>
+          <a href="#">ABC</a>
+          <a href="#">Netflix</a>
+          <a href="#">Belasirius Productions</a>
+          <a href="#">Pierrot</a>
+          <a href="#">CBS</a>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <!--<div class="dropdown is-active">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+            <span>Studio</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+            <a href="#" class="dropdown-item">Screen Media</a>
+            <a href="#" class="dropdown-item">Warner Bros.</a>
+            <a href="#" class="dropdown-item">Sony</a>
+            <a href="#" class="dropdown-item">Universal</a>
+            <a href="#" class="dropdown-item">Lionsgate</a>
+            <a href="#" class="dropdown-item">Paramount</a>
+            <a href="#" class="dropdown-item">MGM</a>
+            <a href="#" class="dropdown-item">BVHE</a>
+            <a href="#" class="dropdown-item">Samuel Goldwyn Films</a>
+            <a href="#" class="dropdown-item">FOX</a>
+            <a href="#" class="dropdown-item">STX Entertainment</a>
+            <a href="#" class="dropdown-item">Studio Mir</a>
+            <a href="#" class="dropdown-item">ABC</a>
+            <a href="#" class="dropdown-item">Netflix</a>
+            <a href="#" class="dropdown-item">Belasirius Productions</a>
+            <a href="#" class="dropdown-item">Pierrot</a>
+            <a href="#" class="dropdown-item">CBS</a>
+          </div>
+        </div>
+     </div>-->
+    </div>
+      <table>
+        <div class="box" id="mapid">I am a map</div>
+      </table>
+
+  </div>
+  <div class="foot">
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>This webpage was created by Lindsay Parks.</p>
+      </div>
+    </footer>
+  </div>
+    <script src="script.js"></script>
+  </body>
+</html>
