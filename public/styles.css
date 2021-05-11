@@ -56,6 +56,7 @@
 }
 
 h2 {
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -67,7 +68,8 @@ h2 {
   font-size: 16px;
   border-radius: 12px;
   cursor: pointer;
-
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 /* Dropdown button on hover & focus */
@@ -80,6 +82,7 @@ h2 {
   left: 50%;
   transform: translateX(-50%);
   display: inline-block;
+  z-index: 1000;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -89,8 +92,8 @@ h2 {
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1000;
   overflow: auto;
+  z-index: 1000;
 }
 
 /* Links inside the dropdown */
@@ -100,10 +103,15 @@ h2 {
   text-decoration: none;
   display: block;
   position: relative;
+  z-index: 1000;
 }
 
 .dropdown-content a:hover {
   background-color: #ddd;
+}
+
+.show {
+  display:block;
 }
 
 .dropdown-content-z {
@@ -118,6 +126,13 @@ h2 {
 .column {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+}
+
+.select {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 table {
@@ -125,14 +140,14 @@ table {
   margin-right: auto;
 }
 
-.show {
-  display:block;
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
-
-.foot {
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
+  
+#wrapper {
+  flex: 1;
 }
 
 /* Ensure proper sizing */
@@ -164,8 +179,12 @@ table {
 
 #aboutSection {
   width: 100%;
-  color: lightseagreen;
 }
+
+.field {
+  color: black;
+}
+
 /*
 .carousel {
   overflow: hidden;

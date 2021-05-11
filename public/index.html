@@ -56,16 +56,151 @@
         </div>
       </nav>
     </div>
+
+  <br>
+
+  <div class="columns is-primary">
+      <div class="column">
+        <select id="category">
+            <option>Category Type</option>
+            <option id="movie" value="movie">Movie</option>
+            <option id="tv" value="tv">TV Show</option>
+      </select>
+      </div>
+      <div class="column">
+        <select>
+            <option>Genre</option>
+            <option>Action</option>
+            <option>Family</option>
+            <option>Thriller & Suspense</option>
+            <option>Drama</option>
+            <option>Horror</option>
+            <option>Comedy</option>
+            <option>Sci-Fi & Fantasy</option>
+            <option>Documentary</option>
+        </select>
+      </div>
+      <div class="column">
+        <select>
+            <option>Viewer Rating</option>
+            <option>NR</option>
+            <option>PG</option>
+            <option>PG-13</option>
+            <option>R</option>
+            <option>TV-Y7-FV</option>
+            <option>TV-14</option>
+            <option>TV-MA</option>
+        </select>
+      </div>
+      <div class="column">
+        <select>
+            <option>Studio</option>
+            <option>Screen Media</option>
+            <option>Warner Bros.</option>
+            <option>Sony</option>
+            <option>Universal</option>
+            <option>Lionsgate</option>
+            <option>Paramount</option>
+            <option>MGM</option>
+            <option>BVHE</option>
+            <option>Samuel Goldwyn Films</option>
+            <option>FOX</option>
+            <option>STX Entertainment</option>
+            <option>Studio Mir</option>
+            <option>ABC</option>
+            <option>Netflix</option>
+            <option>Belasirius Productions</option>
+            <option>Pierrot</option>
+            <option>CBS</option>
+        </select>
+      </div>
+      <div class="column">
+      <select>
+            <option>Year</option>
+            <option>2006</option>
+            <option>2012</option>
+            <option>2013</option>
+            <option>2014</option>
+            <option>2015</option>
+            <option>2016</option>
+            <option>2017</option>
+            <option>2018</option>
+            <option>2019</option>
+            <option>2020</option>
+        </select>
+      </div>
+  </div>
+  <br>
+
+<!--
+    <div class="select is-primary">
+      <select>
+          <option>Category Type</option>
+          <option>Movie</option>
+          <option>TV Show</option>
+      </select>
+      <select>
+          <option>Genre</option>
+          <option>Action</option>
+          <option>Family</option>
+          <option>Thriller & Suspense</option>
+          <option>Drama</option>
+          <option>Horror</option>
+          <option>Comedy</option>
+          <option>Sci-Fi & Fantasy</option>
+          <option>Documentary</option>
+     </select>
+     <select>
+          <option>Viewer Rating</option>
+          <option>NR</option>
+          <option>PG</option>
+          <option>PG-13</option>
+          <option>R</option>
+          <option>TV-Y7-FV</option>
+          <option>TV-14</option>
+          <option>TV-MA</option>
+     </select>
+     <select>
+          <option>Studio</option>
+          <option>Screen Media</option>
+          <option>Warner Bros.</option>
+          <option>Sony</option>
+          <option>Universal</option>
+          <option>Lionsgate</option>
+          <option>Paramount</option>
+          <option>MGM</option>
+          <option>BVHE</option>
+          <option>Samuel Goldwyn Films</option>
+          <option>FOX</option>
+          <option>STX Entertainment</option>
+          <option>Studio Mir</option>
+          <option>ABC</option>
+          <option>Netflix</option>
+          <option>Belasirius Productions</option>
+          <option>Pierrot</option>
+          <option>CBS</option>
+     </select>
+     <select>
+          <option>Year</option>
+          <option>2006</option>
+          <option>2012</option>
+          <option>2013</option>
+          <option>2014</option>
+          <option>2015</option>
+          <option>2016</option>
+          <option>2017</option>
+          <option>2018</option>
+          <option>2019</option>
+          <option>2020</option>
+     </select>
+ </div>
+-->
+ <!--
     <div class="columns">
       <div class="column">
         <div class="dropdown" id="category">
           <div class="dropdown-trigger">
-            <button
-              class="button"
-              aria-haspopup="true"
-              aria-controls="dropdown-menu"
-              onclick="catFunction()"
-            >
+            <button class="button" id="catbtn" aria-haspopup="true" aria-controls="dropdown-menu" onclick="catFunction()">
               <span>Category</span>
               <span class="icon is-small">
                 <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -74,7 +209,7 @@
           </div>
 
           <div class="dropdown-menu" id="dropdown-menu" role="menu">
-            <div class="dropdown-content">
+            <div class="dropdown-content" id="catDropdown">
               <a href="#" class="dropdown-item">Movie</a>
               <a href="#" class="dropdown-item">TV Show</a>
             </div>
@@ -216,22 +351,23 @@
         </div>
       </div>
     </div>
+    -->
     <div class="container" id="results">
       <table class="table is-bordered is-hoverable">
-        <thead>
+        <thead class="has-background-primary-light">
           <tr>
             <th>Title</th>
             <th>Genre</th>
             <th>Viewer Rating</th>
             <th>Studio</th>
             <th>Year</th>
-            <th>Total Invoices</th>
+            <th>Total of All Invoices</th>
           </tr>
         </thead>
         <tbody class="body"></tbody>
       </table>
     </div>
-    <div class="foot">
+    <div class="wrapper">
       <footer class="footer">
         <div class="content has-text-centered">
           <p>This webpage was created by Lindsay Parks.</p>

@@ -1,3 +1,23 @@
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('#mapbtn')) {
+    const dropdowns = document.getElementsByClassName("dropdown-content");
+    let i;
+    for (i = 0; i < dropdowns.length; i++) {
+      let openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
 function mapInit() {
   // follow the Leaflet Getting Started tutorial here
   const mymap = L.map('mapid').setView([38.9897, -76.9378], 13);
@@ -17,21 +37,20 @@ function mapInit() {
 
 async function dataHandler(mapObjectFromFunction) {
 
-  const form = document.querySelector('#search-form');
-  const search = document.querySelector('#search');
+  const mySelector = $(".myDropDown")
 
   const request = await fetch('/studio');
   const data = await request.json();
 
+
   form.addEventListener('click', async (event) => {
     event.preventDefault();
     console.log('form submitted');
-    const filtered = data.filter((record) => record.zip.includes(search.value) && record.geocoded_column_1);
+    const filtered = data.filter((record) => record.studio.includes(mySelector.value) && mySelector.latitude && mySelector.longitude);
     console.table(filtered);
 
-    console.log('markerLongLat', longLat[0], longLat[1]);
-    const marker = L.marker([longLat[1], longLat[0]]).addTo(mapObjectFromFunction);
-
+    console.log('markerLongLat', latitude, longitude);
+    const marker = L.marker([latitude, longitude]).addTo(mapObjectFromFunction);
   });
 }
 
@@ -68,110 +87,99 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-$(document).ready(function() {
 
-  // Check for click events on the navbar burger icon
-  $(".navbar-burger").click(function() {
-
-      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-      $(".navbar-burger").toggleClass("is-active");
-      $(".navbar-menu").toggleClass("is-active");
-
+//the function below will appear when they first go onto the page
+async function getMainData() {
+  const response = await fetch('/api/mainCustom')
+  const allMovies = await response.json()
+  console.table(allMovies)
+  
+ console.log('response:', response)
+  const body = document.querySelector('.body')
+  allMovies.forEach(element => {
+      const row = document.createElement('tr')
+      row.innerHTML = `
+          <td>${element.title}</td>
+          <td>${element.genre_name}</td>
+          <td>${element.rating_description}</td>
+          <td>${element.studio_name}</td>
+          <td>${element.year}</td>
+          <td>${element.total_invoices}</td>
+          `
+      body.append(row)
   });
-});
-
-/*
-ORIGINAL FUNCTIONS FOR DROP DOWNS
-const category = document.querySelector("#category")
-const genre = document.querySelector("#genre")
-const rating = document.querySelector("#viewer_rating")
-const studio = document.querySelector("#studio")
-const year = document.querySelector("#year")
-
-function catFunction() {
-  const dropdowns = [category, genre, rating, studio, year]
-  let i;
-  for(i = 0; i < dropdowns; i++) {
-    let element = document.querySelector(".dropdown")
-    console.log(i)
-    if (element.classList.contains("is-active")){ 
-      element.classList.remove("is-active") 
-    }
-    else {
-      element.classList.add("is-active")
-    } 
-  }
   
 }
+getMainData();
 
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content 
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+async function getMovieData() {
+  const response = await fetch('/api/movieCustom')
+  const justMovies = await response.json()
+  console.log(justMovies);
+  console.log('response:', response);
+  const movie = document.getElementById("category");
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
+  const body = document.querySelector('.body')
+  movie.addEventListener('change', async (event) => {
+    console.log(event.target[1]);
+    if(event.target[1].value === "movie") {
+      console.log(justMovies);
+      body.innerHTML = "";
+      justMovies.forEach(element => {
+      const row = document.createElement('tr')
+      row.innerHTML = `
+          <td>${element.title}</td>
+          <td>${element.genre_name}</td>
+          <td>${element.rating_description}</td>
+          <td>${element.studio_name}</td>
+          <td>${element.year}</td>
+          <td>${element.total_invoices}</td>
+          `
+      body.append(row)
+  });
   }
+  })
 }
-*/
+getMovieData();
 
 /*
-JS FOR CAROUSEL ON ABOUT PAGE
-let slidePosition = 0;
-const slides = document.getElementsByClassName('carousel_items');
-const totalSlides = slides.length;
-
-/* console.log(totalSlides); 
-
-document.
- getElementById('carousel_button_prev')
- .addEventListener("click", function(){
-    moveToPrevSlide();
-})
-
-document.
- getElementById('carousel_button_next')
- .addEventListener("click", function(){
-    moveToNextSlide();
-    console.log("hello")
-})
-
-function moveToPrevSlide() {
-    if(slidePosition == 0) {
-        slidePosition = totalSlides - 1;
-    }
-    else {
-        slidePosition--;
-    }
-    updateSlidePosition();
-}
-
-function moveToNextSlide() {
-    if(slidePosition == totalSlides - 1) {
-        slidePosition = 0;
-    }
-    else {
-        slidePosition++;
-        console.log("hello")
-    }
-    updateSlidePosition();
-}
-
-function updateSlidePosition() {
-    for(let slide of slides) {
-        slide.classList.remove('carousel_items--visible');
-        slide.classList.add('carousel_items--hidden');
-    }
-    slides[slidePosition].classList.add('carousel_items--visible');
+// hard code array, if event.target.value is in the array then .target =i, selected item.
+function filterCategory() {
+  const data = []
+  movie.addEventListener('change', async (event) => {
+    console.log(event.target[1]);
+    if(event.target.value === "$(".column")") {
+      console.log(justMovies);
 }
 */
+
+async function getTVData() {
+  const response = await fetch('/api/tvCustom')
+  const justTv = await response.json()
+  console.log(justTv);
+  console.log('response:', response);
+  const tv = document.getElementById("category");
+
+  const body = document.querySelector('.body')
+  tv.addEventListener('change', async (event) => {
+    console.log(event.target[2]);
+    if(event.target[2].value === "tv") {
+      console.log(justTv);
+      body.innerHTML = "";
+      justTv.forEach(element => {
+      const row = document.createElement('tr')
+      row.innerHTML = `
+          <td>${element.title}</td>
+          <td>${element.genre_name}</td>
+          <td>${element.rating_description}</td>
+          <td>${element.studio_name}</td>
+          <td>${element.year}</td>
+          <td>${element.total_invoices}</td>
+          `
+      body.append(row)
+  });
+  }
+  })
+}
+getTVData();
+

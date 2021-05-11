@@ -179,6 +179,21 @@ router.get('/studio/:studio_id', async (req, res) => {
   }
 });
 
+router.post('/studio', async (req, res) => {
+  const studios = await db.Studio.findAll();
+  const currentId = (await studios.length) + 1;
+  try {
+    const newStudio = await db.Studio.create({
+      studio_id: currentId,
+      studio_name: req.body.studio_name
+    });
+    res.json(newStudio);
+  } catch (err) {
+    console.error(err);
+    res.error('Server error');
+  }
+});
+
 router.put('/studio', async (req, res) => {
   try {
     await db.Studio.update(
@@ -477,19 +492,108 @@ router.delete('/customer/:customer_id', async (req, res) => {
 /// //////////////////////////////////
 /// ///////Custom SQL Endpoint////////
 /// /////////////////////////////////
-const macrosCustom = 'SELECT `Dining_Hall_Tracker`.`Meals`.`meal_id` AS `meal_id`,`Dining_Hall_Tracker`.`Meals`.`meal_name` AS `meal_name`,`Dining_Hall_Tracker`.`Macros`.`calories` AS `calories`,`Dining_Hall_Tracker`.`Macros`.`carbs` AS `carbs`,`Dining_Hall_Tracker`.`Macros`.`sodium` AS `sodium`,`Dining_Hall_Tracker`.`Macros`.`protein` AS `protein`,`Dining_Hall_Tracker`.`Macros`.`fat` AS `fat`,`Dining_Hall_Tracker`.`Macros`.`cholesterol` AS `cholesterol`FROM(`Dining_Hall_Tracker`.`Meals`JOIN `Dining_Hall_Tracker`.`Macros`)WHERE(`Dining_Hall_Tracker`.`Meals`.`meal_id` = `Dining_Hall_Tracker`.`Macros`.`meal_id`)';
-router.get('/table/data', async (req, res) => {
-  try {
-    const result = await db.sequelizeDB.query(macrosCustom, {
-      type: sequelize.QueryTypes.SELECT
-    });
-    res.json(result);
-  } catch (err) {
-    console.error(err);
-    res.error('Server error');
-  }
-});
+const mainCustom = `SELECT title, genre_name, rating_description, studio_name, year, SUM(invoice_total) as total_invoices
+FROM genre 
+JOIN tv_movie USING (genre_id) 
+  JOIN studio USING (studio_id)
+  LEFT JOIN rental_info USING (catalogue_id)
+  LEFT JOIN invoices USING (invoice_id)
+  JOIN viewer_ratings USING (rating_id)
+GROUP BY (title)
+ORDER BY title;`;
 
+router.route('/mainCustom')
+  .get(async (req, res) => {
+    try {
+      const result = await db.sequelizeDB.query(mainCustom, {
+        type: sequelize.QueryTypes.SELECT
+      });
+      res.json(result);
+    } catch (err) {
+      console.error(err);
+      res.send('Server error');
+    }
+  })
+
+  .post(async (req, res) => {
+    res.send('Action unavailable');
+  })
+  .put(async (req, res) => {
+    res.send('Action unavailable');
+  })
+  .delete(async (req, res) => {
+    res.send('Action unavailable');
+  });
+
+const movieCustom = `SELECT title, genre_name, rating_description, studio_name, year, SUM(invoice_total) as total_invoices
+FROM genre 
+JOIN tv_movie USING (genre_id) 
+  JOIN studio USING (studio_id)
+  LEFT JOIN rental_info USING (catalogue_id)
+  LEFT JOIN invoices USING (invoice_id)
+  JOIN viewer_ratings USING (rating_id)
+WHERE episodes IS NULL && seasons IS NULL
+GROUP BY (title)
+ORDER BY title;`;
+
+router.route('/movieCustom')
+  .get(async (req, res) => {
+    try {
+      const result = await db.sequelizeDB.query(movieCustom, {
+        type: sequelize.QueryTypes.SELECT
+      });
+      res.json(result);
+    } catch (err) {
+      console.error(err);
+      res.send('Server error');
+    }
+  })
+
+  .post(async (req, res) => {
+    res.send('Action unavailable');
+  })
+  .put(async (req, res) => {
+    res.send('Action unavailable');
+  })
+  .delete(async (req, res) => {
+    res.send('Action unavailable');
+  });
+
+const tvCustom = `SELECT title, genre_name, rating_description, studio_name, year, SUM(invoice_total) as total_invoices
+FROM genre 
+JOIN tv_movie USING (genre_id) 
+  JOIN studio USING (studio_id)
+  LEFT JOIN rental_info USING (catalogue_id)
+  LEFT JOIN invoices USING (invoice_id)
+  JOIN viewer_ratings USING (rating_id)
+WHERE episodes IS NOT NULL && seasons IS NOT NULL
+GROUP BY (title)
+ORDER BY title;`;
+
+router.route('/tvCustom')
+  .get(async (req, res) => {
+    try {
+      const result = await db.sequelizeDB.query(tvCustom, {
+        type: sequelize.QueryTypes.SELECT
+      });
+      res.json(result);
+    } catch (err) {
+      console.error(err);
+      res.send('Server error');
+    }
+  })
+
+  .post(async (req, res) => {
+    res.send('Action unavailable');
+  })
+  .put(async (req, res) => {
+    res.send('Action unavailable');
+  })
+  .delete(async (req, res) => {
+    res.send('Action unavailable');
+  });
+
+/*
 const mealMapCustom = `SELECT hall_name,
   hall_address,
   hall_lat,
@@ -523,5 +627,5 @@ router.get('/custom', async (req, res) => {
     res.error('Server error');
   }
 });
-
+*/
 export default router;

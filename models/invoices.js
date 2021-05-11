@@ -14,7 +14,7 @@ export default (sequelize, DataTypes) => {
         type: DataTypes.DATE
       },
       invoice_total: {
-        type: DataTypes.DECIMAL
+        type: DataTypes.FLOAT
       },
       customer_id: {
         type: DataTypes.INTEGER,
