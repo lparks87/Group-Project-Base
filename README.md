@@ -37,7 +37,8 @@ Font awesome was also used in the implementation of icons which provides context
       crossorigin="anonymous"
     ></script> 
 ```
-[Getting Started](https://fontawesome.com/start) 
+I have attached three links below to assist users getting started.
+* [Getting Started](https://fontawesome.com/start) 
 * [Font Awesome Documentation](https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use)
 * [Icon Gallery](https://fontawesome.com/icons?d=gallery&p=2)
 
