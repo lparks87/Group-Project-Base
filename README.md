@@ -59,7 +59,7 @@ I have attached three links below to assist users getting started.
 
 ### How to use Markdown
 ***
-Markdown is a text notation system used in Discord, Whatsapp and similar to structure pages without writing HTML at all. You'll be using it for your documentation.
+Markdown was the text notation system to format and structure this documentation. 
 * [Markdown guide](https://www.markdownguide.org/cheat-sheet/)
 
 ### The data used for this application:
