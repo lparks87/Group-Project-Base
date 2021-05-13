@@ -20,15 +20,21 @@ If the user is on a computer, they will be able to see the  three links at the t
 To start off the user will be prompted to the home page where they will be able to use the provided search bar to customize the result set below. Users can search by studio name, genre, and viewer rating which will allow them to see what movie and television shows are bringing in the largest profit and why. This is where the stakeholders will get most of their information and it will be stored in an organized table below that is easy to read.  The Map page will allow users to search for a studio, case sensitive, and it will place a marker at the exact coordinates of the searched studio. The user does not have to refresh the page in order to search for a different studio. The about us section discusses the information problem I am trying to solve and the predicted stakeholders. Below the about section, is a text box where users/studios can edit or delete their information from the dataset. This might be becasue they are going out of business or they simply do not want their information tracked. It also allows for new studios to enter their name and be added to the dataset. 
 
 ### Developer Manual:
-#### How to install the application and all dependencies
+#### How to install the application and all dependencies:
 1. Clone this repository through Github by selecting the green code button.
 2. Open the repository in Github Desktop. Github Desktop can be found here: [Github Desktop](https://desktop.github.com/)
 3. Type 'npm install' into the terminal window.
 4. The application should now be ready to use.
-#### How ot run the application on a server
+#### How to run the application on a server:
 1. Open the respository in VSCode terminal or other terminal application.
 2. Run 'npm start'
 3. In a web browser, go to [LocalHost](http://localhost:3000/)
+#### How to run tests for software:
+There are no prewritten tests in the source repository, but you can use Cypress to run your own written tests.
+1. Make sure you are in the main project directory.
+2. Open two terminals, side by side.
+3. In the first terminal run 'npm start'
+4. In the second terminal run 'npm test'
 
 ### Bulma:
 Bulma is an open source CSS framework that provides easy styling in order to build responsive web applications. To get started using Bulma, you need to type npm install bulma in your terminal. Users will then need to use a CDN by adding the following CSS file to the head of the HTML page:
