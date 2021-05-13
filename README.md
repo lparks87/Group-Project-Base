@@ -12,14 +12,15 @@ Rotten Studios is a web application that allows studios, content platforms, and 
 
 The application will allow studios to determine what attributes are responsible for an increased profit. The user will be able to search by studio name, genre, or viewer rating to determine if there is a larger population attracted to those. The result will contain any result that has that following attrribute so it may be one or more. The users will also be able search a studio by the name and find their location on a map where the marker will give the precise location based on coordinates. Users will also be able to add a studio they want to check, update a studios location, or delete a studio. 
 
-Link to Heroku: https://blooming-temple-21487.herokuapp.com/#
+Link to Heroku: https://morning-stream-00427.herokuapp.com/
 Target browser:
-While developing Course Connector we aimed to consider our audience (University of Maryland (UMD) undergraduate students) when deciding what browsers would be compatible with the majority of our users. By considering what softwares our target audience is most familiar with, we concluded that it would be best to target our web app to Android Operating Systems and the Google Chrome browser.
+My primary stakeholders include studios, content platforms, and production companies. Other studios may want to determine which studios are their biggest competition. They would also be able to determine if there is a specific genre that more customers are purchasing and then start producing more of that type. Content platforms may want to determine if signing a contract with a studio would increase/decrease profit.  Lastly, this could potentially be useful for production companies who work with a given studio as they are responsible making the movie, hiring the actors, and creating advertisements. 
 
 Link to User Manual: User Manual Link
 Link to Developer Manual: Developer Manual Link
 User Manual
-Begin by selecting the department associated with your declared major or major of interest in the dropdown menu. Once you find your major confirm your choice by clicking the “Choose” button next to the dropdown bar After hitting the “Choose” button you should see a new course recommendation that aligns with your selected department Review the Details of the course in the tiles presented below If you are not interested in the displayed course click the “X” button on the bottom left hand side of the window to view a new course recommendation If you like the course and would consider enrolling it, click the heart button in the bottom right hand corner to save it to your bookmarked courses. After clicking this button you will also see a new course recommendation To view your saved courses, click the bookmarks icon at the navigation bar on the bottom of the page. To view more details about your saved courses such as the full description, average grade and sections, click the “Learn More” button on the saved course tile **If you know courses that you are interested in, navigate to the search page to type in courses that you are interested in.
+If the user is on a computer, they will be able to see the  three links at the top labeled Home, Map, and About Us which will allow the user to navigate to those pages. If the user is on a smaller device such as an ipad or a phone, the navigation window will switch to hambuger icon in the top right corner. The user will then click on the icon and the three navigation links will drop down below. 
+To start off the user will be prompted to the home page where they will be able to use the provided search bar to customize the result set below. Users can search by studio name, genre, and viewer rating which will allow them to see what movie and television shows are bringing in the largest profit and why. This is where the stakeholders will get most of their information and it will be stored in an organized table below that is easy to read.  The Map page will allow users to search for a studio, case sensitive, and it will place a marker at the exact coordinates of the searched studio. The user does not have to refresh the page in order to search for a different studio. The about us section discusses the information problem I am trying to solve and the predicted stakeholders. Below the about section, is a text box where users/studios can edit or delete their information from the dataset. This might be becasue they are going out of business or they simply do not want their information tracked. It also allows for new studios to enter their name and be added to the dataset. 
 
 Developer Manual
 How to install your application and all dependencies
@@ -35,33 +36,29 @@ Font Awesome
 Font Awesome is an icons library. It can be found here: https://fontawesome.com/. To see their entire library of icons, go here, https://fontawesome.com/icons?d=gallery. When you find one you like, you can hit "start using this icon" on that icons page to get the HTML tag for adding it to your HTML. We use this for all of the icons on our site. We have added the script for this library already to our HTML.
 
 In case you are curious, here is the code to add it: <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+
 jQuery
-Our project uses jQuery, primarily to display the courses on the home page. You can install the library by opening terminal and running the following: npm install jquery Here is the link to their website which has more in depth downloading instructions: https://jquery.com/download/. To ensure that jQuery is added to your website, if you’re trying to recreate our work, add the following to your HTML head:
+Our project uses jQuery, primarily to display the movies and tv shows to the table that meet the users customized search. You can install the library by opening terminal and running the following: npm install jquery Here is the link to their website which has more in depth downloading instructions: https://jquery.com/download/. To ensure that jQuery is added to your website, if you’re trying to recreate our work, add the following to your HTML head:
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="crossorigin="anonymous"></script>
+
 How to run our application on a server
 To run our application you will first need to install Node.JS. The place to download it can be found here: https://nodejs.org/en/
 You will also need NPM, which you can install here, in addition to Node.JS: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 You can also see how changes you make to your code impact the website without having to push those changes by using Live Server for Visual Studio Code. Visual Studio Code is our preferred text editor. Here is the link to further information about Live Server: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 How to run any tests you have written for your software
-While we do not have formalized tests for our application, we have implemented a thorough series of console logs to track whether the code is retrieving the correct content and performing tasks correctly. These can be accessed through inspecting our page as you run it in your browser.
+While we do not have formalized tests for our application, we have implemented a thorough series of console logs to track whether the code is retrieving the correct content and performing tasks correctly. These can be accessed if the user right clicks on a page and selects inspect. Once the inspection page has been displayed, the user should select console to see any messages added that were added to debug. 
 
 The API's for our application
-We use the PlanetTerp API and the UMD.io API. They are as follows:
+I used my database that I created from INST 327. This database is made up of seven entities including a customers table, genres table, invoices table, rental information table, studios table, tv/movies table, and viewer ratings table. For the purposes of this web application, only tv_movie, genre, viewer_ratings, studio, rental_info, and invoices were used. 
 
-PlanetTerp: https://api.planetterp.com/
-UMD.io: https://umd.io/
-Here is how we use them:
-Concatenated String API with UMD.io to get departments for our dropdown. Example of the concatenation "https://api.umd.io/v1/courses?dept_id=" + "INST" to get "https://api.umd.io/v1/courses?dept_id=INST" data
-GET: Utilizing Express to get the UMD.io's API call. This gets the department for the dropdown.
-POST/PUT: They do not apply to our application because our application does not help users to create new or insert items
+In order to use this data, I created API endpoints which specifies what data can be accessed through the API. For instance, since I used 6 out of the 7 tables, I am not able to access the information from the table not used, the customers table. I created GET, PUT, POST, and DELETE for all endpoints on the off chance that I would have to alter the scope of my project. The GET endpoints retrieve information that is specified through sequelize. The PUT endpoints will update informaiton specifed, typically a record. The POST endpoint adds new data to the server and the DELETE endpoint will delete the specific information.
+
 Known Bugs
-While we worked diligently to implement the code for our search page, the short development window led our team to make the difficult decision of prioritizing the success of fewer features over the unstable implementation of a wider array of features. As a result, our search page code is not implemented on the site.
-We were not able to create a proper if statement to ensure that the popup on the bookmarks page only appears if there are no courses saved to that page yet. While it does not reappear once you close it, it does appear whether there are or are not courses on the page. The position of this box is also contingent on the size of this window. Were there more time we are certain we could correct this formatting and the if statement.
-Our main function is an async that takes two clicks to populate courses on the page. One to initialize. The second click to actually begin showing courses. This is a byproduct of how we wrote the code to get the app to work, but it can lead to the presumption that the app doesn't work if one doesn't proceed to click for a second time.
-If our user decides to click "Heart" or the "X" button before they have populated a course to the home page, the undefined values will be pushed to bookmarks. It also cannot be removed becuase the value is undefined.
+Unfortunately, I was unable to add a sort by function or utilize dropdowns for filters. The dropdowns provided many difficulties when attempting to assign a value to an option in the dropdown. Due to this, I switched to the search bars which are case-sensitive so if a user does not know the exact studio name, they will not be able to utilize the web application much. When a user types in an incorrect result, I am not able to notify the user that it was wrong as I could not implement that function. 
+
 Future Development
 Rectifying all of the current bugs.
-Building out to add in our search page, a syllabi repository, professor information, and even more features beyond these.
-The ability to save courses even if you navigate away from our site entirely.
-Better design choices. Sticking with the UMD color scheme, but with a less aggressive series of hues.
+Including the dropdowns to prevent syntax errors which would increase user learnability and reduce frustration
+Creating a carousel of pictures would allow users to see what studios are included in the dataset which would allow a studio to determine if they are included or not. 
+In the future it would be important to add a more diverse set of features and create a more user-friendly design. 
