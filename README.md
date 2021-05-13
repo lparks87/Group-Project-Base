@@ -1,19 +1,16 @@
 # INST 377 Final Project
 
-Final Project: Rotten Studios
+### Final Project: Rotten Studios
 ***
 Rotten Studios is a web application that allows studios, content platforms, and production companies to find what attributes of movies and television shows have the greatest impact on the total amount of invoices for each movie/television show. My motivation for this project was always seeing web application geared more towards customers purchasing movies and not for the studios or production companies creating these movies. 
 
 My solution is attempting to simplify the process and create a web application where these stakeholders can access all this information in one place. The application will allow studios to determine what attributes are responsible for an increased profit. The user will be able to search by studio name, genre, or viewer rating to determine if there is a larger population attracted to those. The result will contain any result that has that following attrribute so it may be one or more. The users will also be able search a studio by the name and find their location on a map where the marker will give the precise location based on coordinates. Users will also be able to add a studio they want to check, update a studios location, or delete a studio.	
 
-## Link to Heroku: (https://morning-stream-00427.herokuapp.com/)
+### Link to Heroku: (https://morning-stream-00427.herokuapp.com/)
 
 ### Target browser:
 ***
 My primary stakeholders include studios, content platforms, and production companies. Other studios may want to determine which studios are their biggest competition. They would also be able to determine if there is a specific genre that more customers are purchasing and then start producing more of that type. Content platforms may want to determine if signing a contract with a studio would increase/decrease profit.  Lastly, this could potentially be useful for production companies who work with a given studio as they are responsible making the movie, hiring the actors, and creating advertisements. 
-
-## Link to User Manual: User Manual Link
-## Link to Developer Manual: Developer Manual Link
 
 ### User Manual: 
 ***
