@@ -100,9 +100,9 @@ In order to use this data, I created API endpoints which specifies what data can
 Unfortunately, I was unable to add a sort by function or utilize dropdowns for filters. The dropdowns provided many difficulties when attempting to assign a value to an option in the dropdown. Due to this, I switched to the search bars which are case-sensitive so if a user does not know the exact studio name, they will not be able to utilize the web application much. When a user types in an incorrect result, I am not able to notify the user that it was wrong as I could not implement that function. The dataset also lacked a way to distinguish movies from tv shows besides seeing that episodes and seasons were NULL for movies. This made it extremely difficult to separate the two to provide additional information to the user. 
 
 ### Future/Opportunities:
-Rectifying all of the current bugs.
-Including the dropdowns to prevent syntax errors which would increase user learnability and reduce frustration
-Creating a carousel of pictures would allow users to see what studios are included in the dataset which would allow a studio to determine if they are included or not. 
-In the future it would be important to add a more diverse set of features and create a more user-friendly design. 
-Adding another column to the tv_movie table that distinguishes movies from television shows which would then allow another way for users to filter through data. 
+* Rectifying all of the current bugs.
+* Including the dropdowns to prevent syntax errors which would increase user learnability and reduce frustration
+* Creating a carousel of pictures would allow users to see what studios are included in the dataset which would allow a studio to determine if they are included or not. 
+* In the future it would be important to add a more diverse set of features and create a more user-friendly design. 
+* Adding another column to the tv_movie table that distinguishes movies from television shows which would then allow another way for users to filter through data. 
 
