@@ -49,7 +49,27 @@ Markdown is a text notation system used in Discord, Whatsapp and similar to stru
 ### The data used for this application:
 I used my database that I created from INST 327. This database is made up of seven entities including a customers table, genres table, invoices table, rental information table, studios table, tv/movies table, and viewer ratings table. For the purposes of this web application, only tv_movie, genre, viewer_ratings, studio, rental_info, and invoices were used. I will discuss what data is included down below. 
 
-The following studios are included in this dataset: Screen Media, Warner Bros., Sony, Universal, Lionsgate, Paramount, MGM, BVHE, Samuel Goldwyn Films, FOX, STX Entertainment, Studio Mir, ABC, Netflix, Belasirius Production, Pierrot, and CBS. 
+The following studios are included in this dataset: 
+| Studio              |
+| ------------------- |
+| Screen Media        |
+|Warner Bros.         | 
+|Sony                 |
+|Universal            |
+|Lionsgate            |
+|Paramount            |
+|MGM                  |
+|BVHE                 |
+|Samuel Goldwyn Films |
+|FOX                  |
+|STX Entertainment    |
+|Studio Mir           |
+|ABC                  |
+|Netflix              |
+|Belasirius Production|
+       
+
+Screen Media, Warner Bros., Sony, Universal, Lionsgate, Paramount, MGM, BVHE, Samuel Goldwyn Films, FOX, STX Entertainment, Studio Mir, ABC, Netflix, Belasirius Production, Pierrot, and CBS. 
 
 The following genres are included in this dataset: Action, Family, Thriller & Suspense, Drama, Horror, Comedy, Sci-fi & Fantasy, and Documentary/Docu-series. 
 
