@@ -27,7 +27,7 @@ Bulma is an open source CSS framework that provides easy styling in order to bui
 ```
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
 ```
-After this you can begin using Bulma. It's important to add the CSS style sheet after the Bulma link in order to further customize web pages. The last styling link has the greatest priority and able to overwrite other styles. [Bulma Documentation](https://bulma.io/documentation/overview/)
+After this you can begin using Bulma. It's important to add the CSS style sheet after the Bulma link in order to further customize web pages. The last styling link has the greatest priority and able to overwrite other styles. Bulma provides great documentation for users which can be found here: [Bulma Documentation](https://bulma.io/documentation/overview/)
 
 ### Font Awesome:
 Font awesome was also used in the implementation of icons which provides context to the user of what each link a user clicks on. In order to get started using font awesome, you enter your email to create your first kit. Once you send this kit, it will allow you to browse through the free icons they have in their library. In order to use these icons in your code, you will need to add the following script below after the Bulma link and before your CSS link.
@@ -38,8 +38,8 @@ Font awesome was also used in the implementation of icons which provides context
     ></script> 
 ```
 [Getting Started](https://fontawesome.com/start) 
-[Font Awesome Documentation](https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use)
-[Icon Gallery](https://fontawesome.com/icons?d=gallery&p=2)
+* [Font Awesome Documentation](https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use)
+* [Icon Gallery](https://fontawesome.com/icons?d=gallery&p=2)
 
 ### How to use Markdown
 Markdown is a text notation system used in Discord, Whatsapp and similar to structure pages without writing HTML at all. You'll be using it for your documentation.
