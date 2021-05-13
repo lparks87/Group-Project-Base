@@ -1,5 +1,4 @@
 # INST 377 Final Project
-*** 
 
 Final Project: Rotten Studios
 ***
