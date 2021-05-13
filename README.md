@@ -47,7 +47,7 @@ Markdown is a text notation system used in Discord, Whatsapp and similar to stru
 * [Markdown guide](https://www.markdownguide.org/cheat-sheet/)
 
 ### The data used for this application:
-I used my database that I created from INST 327. This database is made up of seven entities including a customers table, genres table, invoices table, rental information table, studios table, tv/movies table, and viewer ratings table. For the purposes of this web application, only tv_movie, genre, viewer_ratings, studio, rental_info, and invoices were used. I will discuss what data is included down below. 
+I used my database that I created from INST 327. This database is made up of seven entities including a customers table, genres table, invoices table, rental information table, studios table, tv/movies table, and viewer ratings table. For the purposes of this web application, only tv_movie, genre, viewer_ratings, studio, rental_info, and invoices were used. The data below was used the most throughout the creation of this web application.
 
 The following studios are included in this dataset: 
 | Studio              |
@@ -67,13 +67,31 @@ The following studios are included in this dataset:
 |ABC                  |
 |Netflix              |
 |Belasirius Production|
-       
+      
 
-Screen Media, Warner Bros., Sony, Universal, Lionsgate, Paramount, MGM, BVHE, Samuel Goldwyn Films, FOX, STX Entertainment, Studio Mir, ABC, Netflix, Belasirius Production, Pierrot, and CBS. 
+The following genres are included in this dataset: 
+| Genre                  |
+| ---------------------- |
+| Action                 |
+|Family                  | 
+|Thriller & Suspense     |
+|Drama                   |
+|Horror                  |
+|Comedy                  |
+|Sci-fi & Fantasy        |
+|Documentary/Docu-series |
 
-The following genres are included in this dataset: Action, Family, Thriller & Suspense, Drama, Horror, Comedy, Sci-fi & Fantasy, and Documentary/Docu-series. 
 
-The following viewer ratings are included in this dataset: NR, PG, PG-13, R, TV-Y7-FV, TV-14, and TV-MA.
+The following viewer ratings are included in this dataset: 
+| Viewer Ratings |
+| ---------------|
+| NR             |
+|PG              | 
+|PG-13           |
+|R               |
+|TV-Y7-FV        |
+|TV-14           |
+|TV-MA           |
 
 ### How I was able to use the data above in the web application:
 In order to use this data, I created API endpoints which specifies what data can be accessed through the API. For instance, since I used 6 out of the 7 tables, I am not able to access the information from the table not used, the customers table. I created GET, PUT, POST, and DELETE for all endpoints on the off chance that I would have to alter the scope of my project. The GET endpoints retrieve information that is specified through sequelize. The PUT endpoints will update informaiton specifed, typically a record. The POST endpoint adds new data to the server and the DELETE endpoint will delete the specific information.
