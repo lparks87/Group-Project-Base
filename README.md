@@ -13,12 +13,14 @@ Rotten Studios is a web application that allows studios, content platforms, and 
 My solution is attempting to simplify the process and create a web application where these stakeholders can access all this information in one place. The application will allow studios to determine what attributes are responsible for an increased profit. The user will be able to search by studio name, genre, or viewer rating to determine if there is a larger population attracted to those. The result will contain any result that has that following attrribute so it may be one or more. The users will also be able search a studio by the name and find their location on a map where the marker will give the precise location based on coordinates. Users will also be able to add a studio they want to check, update a studios location, or delete a studio.	
 
 Link to Heroku: https://morning-stream-00427.herokuapp.com/
+
 Target browser:
 My primary stakeholders include studios, content platforms, and production companies. Other studios may want to determine which studios are their biggest competition. They would also be able to determine if there is a specific genre that more customers are purchasing and then start producing more of that type. Content platforms may want to determine if signing a contract with a studio would increase/decrease profit.  Lastly, this could potentially be useful for production companies who work with a given studio as they are responsible making the movie, hiring the actors, and creating advertisements. 
 
 Link to User Manual: User Manual Link
 Link to Developer Manual: Developer Manual Link
-User Manual
+
+User Manual: 
 If the user is on a computer, they will be able to see the  three links at the top labeled Home, Map, and About Us which will allow the user to navigate to those pages. If the user is on a smaller device such as an ipad or a phone, the navigation window will switch to hambuger icon in the top right corner. The user will then click on the icon and the three navigation links will drop down below. 
 To start off the user will be prompted to the home page where they will be able to use the provided search bar to customize the result set below. Users can search by studio name, genre, and viewer rating which will allow them to see what movie and television shows are bringing in the largest profit and why. This is where the stakeholders will get most of their information and it will be stored in an organized table below that is easy to read.  The Map page will allow users to search for a studio, case sensitive, and it will place a marker at the exact coordinates of the searched studio. The user does not have to refresh the page in order to search for a different studio. The about us section discusses the information problem I am trying to solve and the predicted stakeholders. Below the about section, is a text box where users/studios can edit or delete their information from the dataset. This might be becasue they are going out of business or they simply do not want their information tracked. It also allows for new studios to enter their name and be added to the dataset. 
 
@@ -42,7 +44,13 @@ https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use
 The icon gallery can be accessed here: https://fontawesome.com/icons?d=gallery&p=2
 
 The data used for this application:
-I used my database that I created from INST 327. This database is made up of seven entities including a customers table, genres table, invoices table, rental information table, studios table, tv/movies table, and viewer ratings table. For the purposes of this web application, only tv_movie, genre, viewer_ratings, studio, rental_info, and invoices were used. 
+I used my database that I created from INST 327. This database is made up of seven entities including a customers table, genres table, invoices table, rental information table, studios table, tv/movies table, and viewer ratings table. For the purposes of this web application, only tv_movie, genre, viewer_ratings, studio, rental_info, and invoices were used. I will discuss what data is included down below. 
+
+The following studios are included in this dataset: Screen Media, Warner Bros., Sony, Universal, Lionsgate, Paramount, MGM, BVHE, Samuel Goldwyn Films, FOX, STX Entertainment, Studio Mir, ABC, Netflix, Belasirius Production, Pierrot, and CBS. 
+
+The following genres are included in this dataset: Action, Family, Thriller & Suspense, Drama, Horror, Comedy, Sci-fi & Fantasy, and Documentary/Docu-series. 
+
+The following viewer ratings are included in this dataset: NR, PG, PG-13, R, TV-Y7-FV, TV-14, and TV-MA.
 
 In order to use this data, I created API endpoints which specifies what data can be accessed through the API. For instance, since I used 6 out of the 7 tables, I am not able to access the information from the table not used, the customers table. I created GET, PUT, POST, and DELETE for all endpoints on the off chance that I would have to alter the scope of my project. The GET endpoints retrieve information that is specified through sequelize. The PUT endpoints will update informaiton specifed, typically a record. The POST endpoint adds new data to the server and the DELETE endpoint will delete the specific information.
 
