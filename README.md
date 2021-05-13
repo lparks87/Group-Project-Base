@@ -20,14 +20,14 @@ If the user is on a computer, they will be able to see the  three links at the t
 To start off the user will be prompted to the home page where they will be able to use the provided search bar to customize the result set below. Users can search by studio name, genre, and viewer rating which will allow them to see what movie and television shows are bringing in the largest profit and why. This is where the stakeholders will get most of their information and it will be stored in an organized table below that is easy to read.  The Map page will allow users to search for a studio, case sensitive, and it will place a marker at the exact coordinates of the searched studio. The user does not have to refresh the page in order to search for a different studio. The about us section discusses the information problem I am trying to solve and the predicted stakeholders. Below the about section, is a text box where users/studios can edit or delete their information from the dataset. This might be becasue they are going out of business or they simply do not want their information tracked. It also allows for new studios to enter their name and be added to the dataset. 
 
 ### Developer Manual:
-In order to download this web application, the user will need to select the green code button which will then allow them to clone and open the repository in Github desktop. Information about Github Desktop can be found here: https://desktop.github.com/
+In order to download this web application, the user will need to select the green code button which will then allow them to clone and open the repository in Github desktop. Information about Github Desktop can be found here: [Github Desktop](https://desktop.github.com/)
 
 ### Bulma:
 Bulma is an open source CSS framework that provides easy styling in order to build responsive web applications. To get started using Bulma, you need to type npm install bulma in your terminal. Users will then need to use a CDN by adding the following CSS file to the head of the HTML page:
 ```
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
 ```
-After this you can begin using Bulma. It's important to add the CSS style sheet after the Bulma link in order to further customize web pages. The last styling link has the greatest priority and able to overwrite other styles. Bulma also provides great resources on their documentation which can be found here: https://bulma.io/documentation/overview/
+After this you can begin using Bulma. It's important to add the CSS style sheet after the Bulma link in order to further customize web pages. The last styling link has the greatest priority and able to overwrite other styles. [Bulma Documentation](https://bulma.io/documentation/overview/)
 
 ### Font Awesome:
 Font awesome was also used in the implementation of icons which provides context to the user of what each link a user clicks on. In order to get started using font awesome, you enter your email to create your first kit. Once you send this kit, it will allow you to browse through the free icons they have in their library. In order to use these icons in your code, you will need to add the following script below after the Bulma link and before your CSS link.
@@ -37,10 +37,9 @@ Font awesome was also used in the implementation of icons which provides context
       crossorigin="anonymous"
     ></script> 
 ```
-To access the getting started page: https://fontawesome.com/start 
-The documentation for font awesome can be accessed here: 
-https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use
-The icon gallery can be accessed here: https://fontawesome.com/icons?d=gallery&p=2
+[Getting Started](https://fontawesome.com/start) 
+[Font Awesome Documentation](https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use)
+[Icon Gallery](https://fontawesome.com/icons?d=gallery&p=2)
 
 ### How to use Markdown
 Markdown is a text notation system used in Discord, Whatsapp and similar to structure pages without writing HTML at all. You'll be using it for your documentation.
