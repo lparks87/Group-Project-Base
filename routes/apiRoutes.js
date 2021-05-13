@@ -525,6 +525,35 @@ router.route('/mainCustom')
     res.send('Action unavailable');
   });
 
+/*
+const studioLocation = `SELECT studio_name, latitude, longitude
+FROM studio;`;
+
+router.route('/studioLocation')
+  .get(async (req, res) => {
+    try {
+      const result = await db.sequelizeDB.query(studioLocation, {
+        type: sequelize.QueryTypes.SELECT
+      });
+      res.json(result);
+    } catch (err) {
+      console.error(err);
+      res.send('Server error');
+    }
+  })
+
+  .post(async (req, res) => {
+    res.send('Action unavailable');
+  })
+  .put(async (req, res) => {
+    res.send('Action unavailable');
+  })
+  .delete(async (req, res) => {
+    res.send('Action unavailable');
+  });
+
+  
+
 const movieCustom = `SELECT title, genre_name, rating_description, studio_name, year, SUM(invoice_total) as total_invoices
 FROM genre 
 JOIN tv_movie USING (genre_id) 
@@ -593,7 +622,6 @@ router.route('/tvCustom')
     res.send('Action unavailable');
   });
 
-/*
 const mealMapCustom = `SELECT hall_name,
   hall_address,
   hall_lat,

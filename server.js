@@ -13,9 +13,9 @@ app.use(express.static(staticFolder));
 app.use('/api', apiRoutes);
 
 async function bootServer() {
+  const mysql = await db.sequelizeDB;
+  await mysql.sync();
   try {
-    const mysql = await db.sequelizeDB;
-    await mysql.sync();
     app.listen(PORT, () => {
       console.log(`Listening on: http//localhost:${PORT}`);
     });
