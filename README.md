@@ -35,6 +35,10 @@ There are no prewritten tests in the source repository, but you can use Cypress 
 3. In the first terminal run 'npm start'
 4. In the second terminal run 'npm test'
 
+### JQuery:
+***
+JQuery was used to simplify the code for adding dynamic elements. In order to use JQuery, the user will need to type 'npm install jquery' in the terminal. The JQuery API documentation can be found here: [JQuery Documentation](https://api.jquery.com/) 
+
 ### Bulma:
 ***
 Bulma is an open source CSS framework that provides easy styling in order to build responsive web applications. To get started using Bulma, you need to type npm install bulma in your terminal. Users will then need to use a CDN by adding the following CSS file to the head of the HTML page:
