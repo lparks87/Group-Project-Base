@@ -138,6 +138,11 @@ input.search {
   box-shadow: 2px 5px 12px black;
 }
 
+.instructions {
+  display: block;
+  margin: 0 auto;
+  padding-top: 15px;
+}
 
 /*
 
