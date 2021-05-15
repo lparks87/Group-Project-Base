@@ -124,7 +124,7 @@ In order to use this data, I created API endpoints which specifies what data can
 
 ### Difficulties/Bugs:
 ***
-Unfortunately, I was unable to add a sort by function or utilize dropdowns for filters. The dropdowns provided many difficulties when attempting to assign a value to an option in the dropdown. Due to this, I switched to the search bars which are case-sensitive so if a user does not know the exact studio name, they will not be able to utilize the web application much. When a user types in an incorrect result, I am not able to notify the user that it was wrong as I could not implement that function. The dataset also lacked a way to distinguish movies from tv shows besides seeing that episodes and seasons were NULL for movies. This made it extremely difficult to separate the two to provide additional information to the user. 
+Unfortunately, I was unable to add a sort by function or utilize dropdowns for filters. The dropdowns provided many difficulties when attempting to assign a value to an option in the dropdown. Due to this, I switched to using a search bar which is case-sensitive so if a user does not know the exact studio name, they will not be able to utilize the web application much. When a user types in an incorrect result, I am not able to notify the user that it was wrong as I could not implement that function. The dataset also lacks a way to distinguish movies from tv shows besides seeing that episodes and seasons were NULL for movies. This made it extremely difficult to separate the two to provide additional information to the user. 
 
 ### Future/Opportunities:
 ***
