@@ -116,15 +116,13 @@ body {
   color: black;
 }
 
-input {
-  width: 100%;
-}
-
+/* this is to style the home page search bar */
 .searchbox {
-  max-width: 100%;
-  margin: auto;
+  display: block;
+  margin: 0 auto;
 }
 
+/* this is to style the home page search bar */
 input.search {
   margin: 0;
   text-align: center;
@@ -139,6 +137,9 @@ input.search {
   border-radius: 4px;
   box-shadow: 2px 5px 12px black;
 }
+
+
+/*
 
 .suggestions {
   margin: 0;
@@ -162,7 +163,7 @@ input.search {
   background: linear-gradient(lightsalmon, white);
 }
 
-/*
+
 .carousel {
   overflow: hidden;
   max-width: 600px;

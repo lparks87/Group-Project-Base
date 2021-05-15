@@ -180,17 +180,28 @@ router.get('/studio/:studio_id', async (req, res) => {
 });
 
 router.post('/studio', async (req, res) => {
+  console.info('Post request to /studio', req.body);
+  //need to know what is happening to our routes ^
+  const existingStudio = await db.Studio.findAll({
+    where: {
+      studio_name: req.body.studio_name
+    }
+  });
   const studios = await db.Studio.findAll();
+  console.log(existingStudio);
   const currentId = (await studios.length) + 1;
   try {
     const newStudio = await db.Studio.create({
       studio_id: currentId,
-      studio_name: req.body.studio_name
+      studio_name: req.body.studio_name,
+      latitude: req.body.latitude,
+      longitude: req.body.longitude
     });
-    res.json(newStudio);
+   // res.json(newStudio);
+   res.json({message: 'not yet'})
   } catch (err) {
     console.error(err);
-    res.error('Server error');
+    res.json('Server error');
   }
 });
 

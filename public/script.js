@@ -22,6 +22,72 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+async function filterHome() {
+  const request = await fetch("/api/mainCustom");
+  const types = await request.json();
+  console.log("potato", types);
+  
+  
+  function findMatches(wordToMatch, types) {
+    console.log("potatoe");
+    return types.filter((choice) => {
+      const regex = new RegExp(wordToMatch, "gi");
+      console.log(choice.studio_name.match(regex));
+      return choice.studio_name.match(regex) || choice.genre_name.match(regex) || choice.rating_description.match(regex);
+    });
+  }
+
+  function displayMatches(event) {
+    const matchArray = findMatches(event.target.value, types);
+    console.log(matchArray);
+    const body = document.querySelector(".body");
+    const html = matchArray.map((choice) => {
+      const regex = new RegExp(event.target.value, "gi");
+      const row = document.createElement("tr");
+      row.innerHTML = `
+                    <td class="newCol">${choice.title}</td>
+                    <td class="newCol">${choice.genre_name}</td>
+                    <td class="newCol">${choice.rating_description}</td>
+                    <td class="newCol">${choice.studio_name}</td>
+                    <td class="newCol">${choice.year}</td>
+                    <td class="newCol">${choice.total_invoices}</td>
+                    `;
+      body.append(row);
+    }); 
+  }
+
+  const searchInput = document.querySelector(".search");
+  const suggestions = document.querySelector(".suggestions");
+
+    searchInput.addEventListener("change", displayMatches);
+   // searchInput.addEventListener("submit", displayMatches); I was not able to get submit to work was preffered choice.
+
+}
+
+filterHome();
+
+
+async function addingStudio() {
+  console.log('in the adding studio function');
+  
+  const form = document.querySelector('#recordSubmit');
+  const name = document.querySelector('#studioName');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    console.info('submitted form', e.target);
+    //const formdata = {}
+    const post = await fetch('/api/studio', {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({studio_name: name.value})
+    });
+  });
+}
+
+addingStudio();
 
 
 function mapInit() {
@@ -79,7 +145,13 @@ async function dataHandler(mapObjectFromFunction) {
         mapObjectFromFunction.panTo([latitude, longitude]);
       });
     } else {
-      console.log("hello");
+        /* if(search.value.length === null) { //need to use the triple equality operator
+          const popup = L.popup()
+          .setLatLng([38.9897, -76.9378]) //wanted to set the popup where the map starts at UMD
+          .setContent("I am a standalone popup.")
+          .openOn(mymap);
+       }*/
+       console.log();
     }
   });
 }
@@ -89,51 +161,6 @@ async function windowActions() {
   const map = mapInit();
   await dataHandler(map);
 }
-
-async function filterHome() {
-  const request = await fetch("/api/mainCustom");
-  const types = await request.json();
-  console.log("potato", types);
-  
-  
-  function findMatches(wordToMatch, types) {
-    console.log("potatoe");
-    return types.filter((choice) => {
-      const regex = new RegExp(wordToMatch, "gi");
-      console.log(choice.studio_name.match(regex));
-      return choice.studio_name.match(regex);
-    });
-  }
-
-  function displayMatches(event) {
-    const matchArray = findMatches(event.target.value, types);
-    console.log(matchArray);
-    const body = document.querySelector(".body");
-    const html = matchArray.map((choice) => {
-      const regex = new RegExp(event.target.value, "gi");
-      const row = document.createElement("tr");
-      row.innerHTML = `
-                    <td class="newCol">${choice.title}</td>
-                    <td class="newCol">${choice.genre_name}</td>
-                    <td class="newCol">${choice.rating_description}</td>
-                    <td class="newCol">${choice.studio_name}</td>
-                    <td class="newCol">${choice.year}</td>
-                    <td class="newCol">${choice.total_invoices}</td>
-                    `;
-      body.append(row);
-    }); 
-  }
-
-  const searchInput = document.querySelector(".search");
-  const suggestions = document.querySelector(".suggestions");
-
-    searchInput.addEventListener("change", displayMatches);
-   //searchInput.addEventListener("submit", displayMatches);
-
-}
-
-
-
 
 window.onload = windowActions;
 

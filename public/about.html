@@ -70,6 +70,7 @@
       <div class="field">
         <h2>If you would like your studio to be added to the dataset, please enter it below.</h2>
         <br>
+        <!--
         <div class="control has-icons-left has-icons-right">
           <input class="input is-medium is-rounded" type="text" placeholder="Name of Studio">
           <span class="icon is-left">
@@ -79,6 +80,14 @@
             <i class="fas fa-check fa-sm"></i>
           </span>
         </div>
+        --> 
+        <!--we want this form to be just HTML-->
+        <form id="recordSubmit" class="form">
+          <label for="studioName">Studio Name</label>
+          <input class="input is-rounded" type="text" name="studioName" placeholder="Name of Studio" id="studioName"/>
+          <button type="submit">Submit</button>
+        </form>
+
       </div>
     </div>
   
@@ -89,6 +98,7 @@
         </div>
       </footer>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
 

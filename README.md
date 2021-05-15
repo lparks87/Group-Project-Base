@@ -68,7 +68,7 @@ Markdown was the text notation system to format and structure this documentation
 
 ### The data used for this application:
 ***
-I used my database that I created from INST 327. This database is made up of seven entities including a customers table, genres table, invoices table, rental information table, studios table, tv/movies table, and viewer ratings table. For the purposes of this web application, only tv_movie, genre, viewer_ratings, studio, rental_info, and invoices were used. The data below was used the most throughout the creation of this web application.
+I used my database that I created from INST 327. This database is made up of seven entities including a customers table, genres table, invoices table, rental information table, studios table, tv/movies table, and viewer ratings table. For the purposes of this web application, only tv_movie, genre, viewer_ratings, studio, rental_info, and invoices were used. The data below was used the most throughout the creation of this web application and can be used as a guide when using it.
 
 The following studios are included in this dataset: 
 | Studio              |
