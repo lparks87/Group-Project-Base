@@ -8,7 +8,11 @@ My solution is attempting to simplify the process and create a web application w
 
 ### Link to Heroku: (https://morning-stream-00427.herokuapp.com/)
 
-### Target browser:
+### Target Browser:
+***
+This web application can be used on both iOS and android devices. The web application will also adapt to different sized screen.
+
+### Target Audience:
 ***
 My primary stakeholders include studios, content platforms, and production companies. Other studios may want to determine which studios are their biggest competition. They would also be able to determine if there is a specific genre that more customers are purchasing and then start producing more of that type. Content platforms may want to determine if signing a contract with a studio would increase/decrease profit.  Lastly, this could potentially be useful for production companies who work with a given studio as they are responsible making the movie, hiring the actors, and creating advertisements. 
 
